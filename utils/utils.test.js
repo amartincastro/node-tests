@@ -18,7 +18,27 @@ it('should square a number', () => {
   expect(res).toBe(9).toBeA('number');
 });
 
-it('should expect some values', () => {
-  // expect(12).toNotBe(11);
-  expect({name: 'Ariel'}).toEqual({name: 'Ariel'});
+// should verify first and last names are set
+// asser that user object includes firstName and lastName with proper values
+it('should set firstName and lastName', () => {
+  var user = {location: 'here', age: 100};
+  var res = utils.setName(user, 'Ariel Castro');
+
+  expect(res).toInclude({
+    firstName: 'Ariel',
+    lastName: 'Castro'
+  })
 });
+
+// it('should expect some values', () => {
+//   // expect(12).toNotBe(11);
+//   // expect({name: 'Ariel'}).toEqual({name: 'Ariel'});
+//   // expect([2,3,4]).toInclude(5);
+//   expect({
+//     name: 'Ariel',
+//     age: '100',
+//     location: 'here'
+//   }).toInclude({
+//     age: '100'
+//   })
+// });
